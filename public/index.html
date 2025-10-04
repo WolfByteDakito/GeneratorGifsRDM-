@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de GIF Aléatoire POO</title>
+    
+    <style>
+        /* CSS amélioré ci-dessous */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #4a90e2;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        /* Conteneur principal du GIF */
+        .gif-container {
+            width: 100%;
+            padding-top: 100%; /* Ratio 1:1 pour un carré */
+            position: relative;
+            margin-bottom: 20px;
+            border: 2px solid #4a90e2;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #e6e9ed;
+            display: flex; /* Utilisé pour centrer le message */
+            justify-content: center;
+            align-items: center;
+        }
+
+        #random-gif {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Assure que le GIF est visible sans déformation */
+            display: none; /* Géré par le JS */
+        }
+
+        #message {
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        /* Section des contrôles (Bouton et Input) */
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #tag-input {
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            font-size: 1em;
+            text-align: center;
+        }
+
+        #generate-button {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #generate-button:hover:not(:disabled) {
+            background-color: #449d44;
+        }
+
+        #generate-button:disabled {
+            background-color: #999;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✨ Générateur de GIF Aléatoire</h1>
+
+        <div class="gif-container">
+            <img id="random-gif" src="" alt="GIF aléatoire">
+            <p id="message">Cliquez sur le bouton ou entrez un mot-clé !</p>
+        </div>
+
+        <div class="controls">
+            <input type="text" id="tag-input" placeholder="Mot-clé (ex: chat, programming)">
+            
+            <button id="generate-button">Nouveau GIF Aléatoire</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
